@@ -3,9 +3,11 @@ This project supports the creation of a CI/CD enabled GitHub repository to hold 
 
 Here you find Julia reusable [code](mytemplate.jl) showing how to exploit functionality implemented by the [PkgTemplates.jl](https://github.com/invenia/PkgTemplates.jl) Julia project. Documentation of the latter is found [here](https://invenia.github.io/PkgTemplates.jl/stable/). 
 
-By cloning this public project you should be able to reuse the **template()** function therein with minimal tailoring, if any, for the purpose of creating new Github projects where you intend to develop a Julia package. CI/CD capabilities are enabled through [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions).  
+By cloning this public project you should be able to reuse the **template()** function therein with minimal tailoring, if any, for the purpose of creating new Github projects where you intend to develop a Julia package. The [code](mytemplate.jl) does not contain user specific data such as the GitHub user name and email: these are taken from the user GitHub configuration. Also, the path of local packages/repositories should be set in the Julia **JULIA_PKG_DEVDIR** environment variable. 
 
-After cloning this project, just start the Julia REPL and type the following 
+CI/CD capabilities are enabled in the generated project through [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions).  
+
+After cloning this project, just change directory to **$JULIA_PKG_DEVDIR**, start the Julia REPL and type the following 
 
 <pre>               <font color="#4E9A06"><b>_</b></font>
    <font color="#3465A4"><b>_</b></font>       _ <font color="#CC0000"><b>_</b></font><font color="#4E9A06"><b>(_)</b></font><font color="#75507B"><b>_</b></font>     |  Documentation: https://docs.julialang.org
