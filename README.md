@@ -97,7 +97,7 @@ Template:
 
 You are now ready to create your package by calling the function returned by the previous REPL command and passing as its single argument the name you want to be given to your new Julia package (".jl" suffix excluded). 
 
-Example:
+### Example ###
 
 <pre>
 <font color="#4E9A06"><b>julia&gt; </b></font>t(&quot;MyJuliaPkg&quot;)
@@ -159,3 +159,8 @@ Path `..` exists and looks like the correct package. Using existing path.
 <font color="#06989A"><b>[ Info: </b></font>Running posthooks
 <font color="#06989A"><b>[ Info: </b></font>New package is at /home/marcello/Links/repos/git/MyJuliaPkg
 </pre>
+
+## CI Workflows
+Building with GitHub actions using a local runner can only be safely made on a **private** repository.
+I will post more details on how to setup [Github Actions](https://docs.github.com/en/) in the generated project as soon as I will have gathered enough experience with the CI workflows. 
+  
