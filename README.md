@@ -7,9 +7,11 @@ By cloning this public project you should be able to reuse the **template()** fu
 
 CI/CD capabilities are enabled in the generated project through [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions).  
 
-After cloning this project, just change directory to **$JULIA_PKG_DEVDIR**, start the Julia REPL and type the following 
+After cloning this project, change directory to **$JULIA_PKG_DEVDIR**, start the Julia REPL and type the following 
 
-<pre>               <font color="#4E9A06"><b>_</b></font>
+<pre><font color="#4E9A06"><b>marcello@X570</b></font>:<font color="#3465A4"><b>~</b></font>$ cd $JULIA_PKG_DEVDIR
+<font color="#4E9A06"><b>marcello@X570</b></font>:<font color="#3465A4"><b>~/Links/repos/git</b></font>$ julia
+               <font color="#4E9A06"><b>_</b></font>
    <font color="#3465A4"><b>_</b></font>       _ <font color="#CC0000"><b>_</b></font><font color="#4E9A06"><b>(_)</b></font><font color="#75507B"><b>_</b></font>     |  Documentation: https://docs.julialang.org
   <font color="#3465A4"><b>(_)</b></font>     | <font color="#CC0000"><b>(_)</b></font> <font color="#75507B"><b>(_)</b></font>    |
    _ _   _| |_  __ _   |  Type &quot;?&quot; for help, &quot;]?&quot; for Pkg help.
@@ -23,7 +25,8 @@ After cloning this project, just change directory to **$JULIA_PKG_DEVDIR**, star
 <font color="#4E9A06"><b>julia&gt; </b></font>include(&quot;mytemplate.jl&quot;)
 template (generic function with 1 method)
 
-<font color="#4E9A06"><b>julia&gt; </b></font>t = template()
+<font color="#4E9A06"><b>julia&gt; </b></font>t=template()
+</pre>
 Template:
   authors: [&quot;Marcello Vitaletti &lt;marcello.vitaletti@gmail.com&gt; and contributors&quot;]
   dir: &quot;~/Links/repos/git&quot;
