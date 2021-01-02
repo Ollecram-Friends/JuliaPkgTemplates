@@ -161,6 +161,6 @@ Path `..` exists and looks like the correct package. Using existing path.
 </pre>
 
 ## CI Workflows
-Building with GitHub actions using a self/hosted (i.e. local) runner can only be safely made on a **private** repository.
+Building with GitHub actions using a self-hosted (i.e. local) runner can only be safely made on a **private** repository.
 I will post more details on how to setup [Github Actions](https://docs.github.com/en/) with a self-hosted runner in the GitHub repo as soon as I will have gathered some familiarity with the CI workflows. 
   
