@@ -1,7 +1,9 @@
 # JuliaPkgTemplates
 This project supports the creation of a CI/CD enabled GitHub repository to hold a new Julia package.
 
-Here you find Julia reusable [code](mytemplate.jl) showing how to exploit functionality implemented by the [PkgTemplates.jl](https://invenia.github.io/PkgTemplates.jl/stable/) Julia project. By cloning this public project you should be able to reuse the **template()** function therein with minimal tailoring, if any, for the purpose of creating new Github projects where you intend to develop a Julia package. CI/CD capabilities are enabled through [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions.  
+Here you find Julia reusable [code](mytemplate.jl) showing how to exploit functionality implemented by the [PkgTemplates.jl](https://github.com/invenia/PkgTemplates.jl) Julia project. Documentation of the latter is found [here](https://invenia.github.io/PkgTemplates.jl/stable/). 
+
+By cloning this public project you should be able to reuse the **template()** function therein with minimal tailoring, if any, for the purpose of creating new Github projects where you intend to develop a Julia package. CI/CD capabilities are enabled through [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions).  
 
 After cloning this project, just start the Julia REPL and type the following 
 
