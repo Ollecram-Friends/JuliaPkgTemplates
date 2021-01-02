@@ -44,7 +44,7 @@ function template()
             # email=                        # Take default from github.email
             # branch=                       # Desired name of the repos's default branch
             ssh=true,                       # Use SSH (vs HTTPS)
-            jl=true,                        # Add ".jl" to the git repository URL                   
+            jl=false,                       # Add ".jl" to the git repository URL                   
             manifest=false,                 # Never commit Manifest.toml
             gpgsign=false,                  # No GPG signing of Git commits
             ),

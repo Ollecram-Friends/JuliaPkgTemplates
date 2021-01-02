@@ -96,7 +96,7 @@ Template:
       project: true
 </pre>
 
-You are now ready to create your package by calling the function returned by the previous REPL command and passing as its single argument the name you want to be given to your new Julia package (".jl" suffix excluded). 
+You are now ready to create your package by calling the function returned by the previous REPL command and passing as its single argument the name you want to be given to your new Julia package. 
 
 ### Example ###
 
