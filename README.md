@@ -1,7 +1,7 @@
 # JuliaPkgTemplates
-Code assisting the creation of a Julia package project GitHub repository based on Julia Pkg &amp; PkgTemplates 
+This project supports the creation of a CI/CD enabled GitHub repository to hold a new Julia package.
 
-This project contains Julia reusable [code](mytemplate.jl) showing how to exploit functionality implemented by the [PkgTemplates.jl] Julia project. By cloning this public project you should be able to reuse the **template()** function with minimal tailoring, if any, for the purpose of creating new Github projects where you intend to develop a Julia package. CI/CD capabilities are enabled through [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions.  
+Here you find Julia reusable [code](mytemplate.jl) showing how to exploit functionality implemented by the [PkgTemplates.jl] Julia project. By cloning this public project you should be able to reuse the **template()** function therein with minimal tailoring, if any, for the purpose of creating new Github projects where you intend to develop a Julia package. CI/CD capabilities are enabled through [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions.  
 
 After cloning this project, just start the Julia REPL and type the following 
 
@@ -90,3 +90,68 @@ Template:
       project: true
 
 <font color="#4E9A06"><b>julia&gt; </b></font></pre>
+
+You are now ready to create your package by calling the function returned by the previous REPL command and passing as its single argument the name you want to be given to your new Julia package (".jl" suffix excluded). 
+
+Example:
+
+<pre>
+<font color="#4E9A06"><b>julia&gt; </b></font>t(&quot;MyJuliaPkg&quot;)
+<font color="#06989A"><b>[ Info: </b></font>Running prehooks
+<font color="#06989A"><b>[ Info: </b></font>Running hooks
+<font color="#4E9A06"><b> Activating</b></font> new environment at `~/Links/repos/git/MyJuliaPkg/test/Project.toml`
+<font color="#4E9A06"><b>   Updating</b></font> registry at `~/.julia/registries/General`
+<font color="#4E9A06"><b>   Updating</b></font> git-repo `https://github.com/JuliaRegistries/General.git`
+<font color="#4E9A06"><b>  Resolving</b></font> package versions...
+<font color="#4E9A06"><b>Updating</b></font> `/hdd3/marcello/repos/git/MyJuliaPkg/test/Project.toml`
+ <font color="#555753"> [8dfed614] </font><font color="#8AE234">+ Test</font>
+<font color="#4E9A06"><b>Updating</b></font> `/hdd3/marcello/repos/git/MyJuliaPkg/test/Manifest.toml`
+ <font color="#555753"> [2a0f44e3] </font><font color="#8AE234">+ Base64</font>
+ <font color="#555753"> [8ba89e20] </font><font color="#8AE234">+ Distributed</font>
+ <font color="#555753"> [b77e0a4c] </font><font color="#8AE234">+ InteractiveUtils</font>
+ <font color="#555753"> [56ddb016] </font><font color="#8AE234">+ Logging</font>
+ <font color="#555753"> [d6f4376e] </font><font color="#8AE234">+ Markdown</font>
+ <font color="#555753"> [9a3f8284] </font><font color="#8AE234">+ Random</font>
+ <font color="#555753"> [9e88b42a] </font><font color="#8AE234">+ Serialization</font>
+ <font color="#555753"> [6462fe0b] </font><font color="#8AE234">+ Sockets</font>
+ <font color="#555753"> [8dfed614] </font><font color="#8AE234">+ Test</font>
+<font color="#4E9A06"><b> Activating</b></font> environment at `~/.julia/environments/v1.5/Project.toml`
+<font color="#4E9A06"><b> Activating</b></font> new environment at `~/Links/repos/git/MyJuliaPkg/docs/Project.toml`
+<font color="#4E9A06"><b>  Resolving</b></font> package versions...
+<font color="#4E9A06"><b>Updating</b></font> `/hdd3/marcello/repos/git/MyJuliaPkg/docs/Project.toml`
+ <font color="#555753"> [e30172f5] </font><font color="#8AE234">+ Documenter v0.26.1</font>
+<font color="#4E9A06"><b>Updating</b></font> `/hdd3/marcello/repos/git/MyJuliaPkg/docs/Manifest.toml`
+ <font color="#555753"> [ffbed154] </font><font color="#8AE234">+ DocStringExtensions v0.8.3</font>
+ <font color="#555753"> [e30172f5] </font><font color="#8AE234">+ Documenter v0.26.1</font>
+ <font color="#555753"> [b5f81e59] </font><font color="#8AE234">+ IOCapture v0.1.1</font>
+ <font color="#555753"> [682c06a0] </font><font color="#8AE234">+ JSON v0.21.1</font>
+ <font color="#555753"> [69de0a69] </font><font color="#8AE234">+ Parsers v1.0.15</font>
+ <font color="#555753"> [2a0f44e3] </font><font color="#8AE234">+ Base64</font>
+ <font color="#555753"> [ade2ca70] </font><font color="#8AE234">+ Dates</font>
+ <font color="#555753"> [8ba89e20] </font><font color="#8AE234">+ Distributed</font>
+ <font color="#555753"> [b77e0a4c] </font><font color="#8AE234">+ InteractiveUtils</font>
+ <font color="#555753"> [76f85450] </font><font color="#8AE234">+ LibGit2</font>
+ <font color="#555753"> [8f399da3] </font><font color="#8AE234">+ Libdl</font>
+ <font color="#555753"> [56ddb016] </font><font color="#8AE234">+ Logging</font>
+ <font color="#555753"> [d6f4376e] </font><font color="#8AE234">+ Markdown</font>
+ <font color="#555753"> [a63ad114] </font><font color="#8AE234">+ Mmap</font>
+ <font color="#555753"> [44cfe95a] </font><font color="#8AE234">+ Pkg</font>
+ <font color="#555753"> [de0858da] </font><font color="#8AE234">+ Printf</font>
+ <font color="#555753"> [3fa0cd96] </font><font color="#8AE234">+ REPL</font>
+ <font color="#555753"> [9a3f8284] </font><font color="#8AE234">+ Random</font>
+ <font color="#555753"> [ea8e919c] </font><font color="#8AE234">+ SHA</font>
+ <font color="#555753"> [9e88b42a] </font><font color="#8AE234">+ Serialization</font>
+ <font color="#555753"> [6462fe0b] </font><font color="#8AE234">+ Sockets</font>
+ <font color="#555753"> [8dfed614] </font><font color="#8AE234">+ Test</font>
+ <font color="#555753"> [cf7118a7] </font><font color="#8AE234">+ UUIDs</font>
+ <font color="#555753"> [4ec0a83e] </font><font color="#8AE234">+ Unicode</font>
+Path `..` exists and looks like the correct package. Using existing path.
+<font color="#4E9A06"><b>  Resolving</b></font> package versions...
+<font color="#4E9A06"><b>Updating</b></font> `/hdd3/marcello/repos/git/MyJuliaPkg/docs/Project.toml`
+ <font color="#555753"> [b9db0081] </font><font color="#8AE234">+ MyJuliaPkg v0.1.0 `..`</font>
+<font color="#4E9A06"><b>Updating</b></font> `/hdd3/marcello/repos/git/MyJuliaPkg/docs/Manifest.toml`
+ <font color="#555753"> [b9db0081] </font><font color="#8AE234">+ MyJuliaPkg v0.1.0 `..`</font>
+<font color="#4E9A06"><b> Activating</b></font> environment at `~/.julia/environments/v1.5/Project.toml`
+<font color="#06989A"><b>[ Info: </b></font>Running posthooks
+<font color="#06989A"><b>[ Info: </b></font>New package is at /home/marcello/Links/repos/git/MyJuliaPkg
+</pre>
