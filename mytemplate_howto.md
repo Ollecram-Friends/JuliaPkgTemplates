@@ -19,7 +19,7 @@ I assume that
 1. Open the shell and execute the following commands to ***clone this project***
     - `cd $JAVA_PKG_DEVDIR`
     - `git clone git@github.com:Ollecram-Friends/JuliaPkgTemplates.git`
-2. In the shell and execute the following commands to ***start the Julia REPL***
+2. In the shell, execute the following commands to ***start the Julia REPL***
     - `cd $JAVA_PKG_DEVDIR`   (...just in case you moved elsewhere...)
     - `julia`
 3. In the Julia REPL run the following commands, where `MyJuliaPkg` in the last one stands for the name of the new package

@@ -1,5 +1,5 @@
 # Julia Package Development CI with GitHub Actions
-Please read the [memo](mytemplate_memo.md) ***before*** this file. 
+You may want to read this [HowTo](mytemplate_howto.md) ***before*** this file, to learn a simple, repeatable way to create GitHub projects for new Julia packages with ***uniform structure and workflows***. 
 
 This file illustrates the author experience with a CI strategy that could be appealing to small teams of Julia package developers.
 
