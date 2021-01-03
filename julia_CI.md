@@ -22,10 +22,10 @@ The following ***serious drawback*** emerged in some early attempts at using Git
 Fortunately, the above limitation is now removed for projects hosted by a GitHub ***Organization***. The monthly cost of creating an organization is 4$ per seat. Considering that 7$ buy a single user the ability to create an unlimited number of private repositories, 11$ buy everybody the ability to have an unlimited number of private repositories within her/his own organization. We will touch later upon the more likely scenario where multiple developers need to access the same  project without requiring each of them to get a *paid seat* in the organization where the project is contained.  
 
 Therefore, let us focus first on the scenario where a ***single developer*** 
-a. Owns a GitHub ***user*** account (e.g. **Ollecram**) at monthly 7$ (unlimited private repos)
-b. Owns a GitHub ***organization*** account with 1+ seats (e.g. **Ollecram-Friends**)
-c. Keeps non-CI projects in Git repositories (public or private) at the ***user*** account
-d. Keeps CI projects in ***private*** Git repositories at the ***organization*** account
-e. Enables a ***Self-Hosted Runner*** in the ***organization*** account for running CI against all projects therein
+1. Owns a GitHub ***user*** account (e.g. **Ollecram**) at monthly 7$ (unlimited private repos)
+2. Owns a GitHub ***organization*** account with 1+ seats (e.g. **Ollecram-Friends**)
+3. Keeps non-CI projects in Git repositories (public or private) at the ***user*** account
+4. Keeps CI projects in ***private*** Git repositories at the ***organization*** account
+5. Enables a ***Self-Hosted Runner*** in the ***organization*** account for running CI against all projects therein
 
  
