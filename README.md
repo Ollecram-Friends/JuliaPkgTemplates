@@ -1,7 +1,7 @@
 # JuliaPkgTemplates
 This project supports the creation of a CI/CD enabled GitHub repository to hold a new Julia package.
 
-Here you find Julia reusable [code](mytemplate.jl) showing how to exploit functionality implemented by the [PkgTemplates.jl](https://github.com/invenia/PkgTemplates.jl) Julia project. Documentation of the latter is found [here](https://invenia.github.io/PkgTemplates.jl/stable/). 
+Here you find Julia reusable [code](mytemplate.jl) showing how to exploit functionality implemented by the [PkgTemplates.jl](https://github.com/invenia/PkgTemplates.jl) Julia project. Documentation of the latter is found [there](https://invenia.github.io/PkgTemplates.jl/stable/). 
 
 By cloning this public project you should be able to reuse the **template()** function therein with minimal tailoring, if any, for the purpose of creating new Github projects where you intend to develop a Julia package. The [code](mytemplate.jl) does not contain user specific data such as the GitHub user name and email: these are taken from the user GitHub configuration. Also, the path of local packages/repositories should be set in the Julia **JULIA_PKG_DEVDIR** environment variable. 
 
@@ -161,7 +161,8 @@ Path `..` exists and looks like the correct package. Using existing path.
 <font color="#06989A"><b>[ Info: </b></font>New package is at /home/marcello/Links/repos/git/MyJuliaPkg
 </pre>
 
-## CI Workflows
-Building with GitHub actions using a self-hosted (i.e. local) runner can only be safely made on a **private** repository.
-I will post more details on how to setup [Github Actions](https://docs.github.com/en/) with a self-hosted runner in the GitHub repo as soon as I will have gathered some familiarity with the CI workflows. 
+## CI Workflows using GitHub Actions
+More details about leveraging [Github Actions](https://docs.github.com/en/) for the automation of CI workflows and the overall GitHub setup for developing Julia packages in a small organization can be found [here](julia_CI.md). 
+
+
   
