@@ -45,6 +45,9 @@ Note that at this stage the runner will be only invoked to run jobs from reposit
 
 To redirect workflows from ***all repositories*** in your organization to the self-hosted runner, just select the `Default` runner group. To selectively redirect workflows from certain repositories you just need to create more runner groups.   
 
+### Configuring a self-hosted runner as a service
+Look [here](https://docs.github.com/en/free-pro-team@latest/actions/hosting-your-own-runners/configuring-the-self-hosted-runner-application-as-a-service) for instructions on how to configure a self-hosted runner as a *service* so that can be easily started/stopped from the command line. 
+
 ### A simple collaboration model
 
 A simple model can be established for collaboration among members of the same organization, whereby
