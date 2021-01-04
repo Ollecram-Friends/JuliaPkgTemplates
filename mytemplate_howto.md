@@ -31,7 +31,7 @@ I assume that
     - `CTRL+D`
 
 A ***safer/quicker alternative*** to manually executing the above steps 2 to 4 is to run the following `bash` script just after step 1:
-    - `./mytemplate.sh MyJuliaPkg` 
+- `./mytemplate.sh MyJuliaPkg`
 
 ## How To PHASE 2 - Create GitHub project and override with local content
 
