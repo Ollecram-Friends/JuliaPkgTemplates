@@ -17,7 +17,7 @@ elif [ $# -gt 1 ];
 then echo "Error: too many arguments. Only the name of the Julia Pkg must be supplied" && exit 1;
 fi
 
-# 2. Check that JULIA_PKG_DEVDIR is defined and points to an existing directory
+# 2. Check that JULIA_PKG_DEVDIR variable is defined
 if [ -z ${JULIA_PKG_DEVDIR+x} ]; 
 then echo "Error: JULIA_PKG_DEVDIR is unset" && exit 1;
 else echo "JULIA_PKG_DEVDIR is set to '$JULIA_PKG_DEVDIR'";
