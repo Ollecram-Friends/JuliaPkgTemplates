@@ -27,7 +27,7 @@ Let us make all this more definite by focusing first on the scenario where a ***
 
 Read the following section for details about the last point.
 
-### How to setup a GitHub Actions self-hosted runner
+### How to setup a GitHub Actions self-hosted runners
 
 After you have created your organization, let do the following to setup a ***self-hosted runner***
 1. Sign-in into GitHub with your ***user account***
@@ -43,6 +43,15 @@ After you have created your organization, let do the following to setup a ***sel
 
 Note that at this stage the runner will be only invoked to run jobs from repositories that are associated to a `Runner group`. This means that workflows triggered for a repository that is not part of any Runner group will be executed on the GitHub Actions web infrastructure. 
 
-To redirect workflows from ***all repositories*** in your organization to the self-hosted runner, just select the `Default` runner group. To selectively redirect workflows from certain repositories you just need to create more runner groups.    
+To redirect workflows from ***all repositories*** in your organization to the self-hosted runner, just select the `Default` runner group. To selectively redirect workflows from certain repositories you just need to create more runner groups.   
 
+### A simple collaboration model
+
+A simple model can be established for collaboration among members of the same organization, whereby
+
+- Some team members (most or anyone of them) provide a server to host one instance of the GtHub Actions ***runner***
+- A distinct ***Runner group*** is defined for any such runner 
+- While a package is being developed, the corresponding repository is made ***private*** and it is assigned to the `Runner group` whose associated runner is made available for this development effort. The team member providing the self-hosted runner would, likely yet not necessarily, be the one who is expected to commit or somehow lead the development effort.
+- Once the main development is terminated, the corresponding repository is removed from any self-hosted runner and its visibility is changed from ***private*** to ***public***.
+- From this point onward, the code is registered as a ***Julia package*** and CI workflows for bug-fixes and new releases are run on the GitHub Actions web infrastructure.
  
