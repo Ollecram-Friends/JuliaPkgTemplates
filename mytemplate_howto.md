@@ -33,10 +33,14 @@ I assume that
 A ***safer/quicker alternative*** to manually executing the above steps 2 to 4 is to run the following `bash` script just after step 1:
 - `./mytemplate.sh MyJuliaPkg`
 
-## How To PHASE 2 - Create GitHub project and override with local content
+## How To PHASE 2 - Create GitHub repository and fill it with local content
 
-1. On GitHub ***create a new empty project with the same name***
-    - With your account, use the GitHub Web UI to create the project. No initial content is needed, not even the README and .gitignore)
+1. On GitHub ***create a new empty repository with the same name***
+    - With your account, use the GitHub Web UI to create the project
+    - No initial content is needed, not even the README and .gitignore
+    - If the repo is meant to serve for initial package development
+        - ***make it private***
+        - ***create it at the organization level***  
     - Copy the SSH url of the created package to the clipboard
     - Review `Settings / Actions / Actions Permissions / Policies` at the organization level. In particular, if Actions are only enabled for `Selected repositories` the newly created one must be selected for automation to work.
 2. Issue Git commands to ***set the remote origin and push***
