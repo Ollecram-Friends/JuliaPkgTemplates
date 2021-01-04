@@ -12,7 +12,8 @@ I assume that
 1. You have a GitHub account configured for **SSH**
 2. You have set the variables `github.user`, `user.name` and `user.email` in your GitHub configuration, as you you verify by `git config --list`  
 3. You have setup your shell so that **JAVA_PKG_DEVDIR** variable holds the path to all the local Git clones
-4. You have Julia 1.5.0 or a later version 
+4. You have Julia 1.5.0 or a later version
+5. You have added the `PkgTemplates` Julia package to your Julia environment.
 
 ## How To PHASE 1 - Create the new package locally
 
@@ -30,7 +31,7 @@ I assume that
 4. Quit the Julia REPL
     - `CTRL+D`
 
-A ***safer/quicker alternative*** to manually executing the above steps 2 to 4 is to run the following `bash` script just after step 1:
+A ***quicker alternative*** to manually executing the above steps 2 to 4 is to run the following *bash* script just after step 1:
 - `./mytemplate.sh MyJuliaPkg`
 
 ## How To PHASE 2 - Create GitHub repository and fill it with local content
