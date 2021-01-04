@@ -7,11 +7,12 @@ By cloning this public project you should be able to reuse the **template()** fu
 
 CI/CD capabilities are enabled in the generated project through [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions).  
 
-## Usage
-You may want to read this [HowTo](mytemplate_howto.md) to learn a simple, repeatable way to create GitHub projects for new Julia packages with a ***uniform structure and workflows***. 
-
 ## CI Workflows using GitHub Actions
 More details about leveraging [Github Actions](https://docs.github.com/en/) for the automation of CI workflows and the overall GitHub setup for developing Julia packages in a small organization can be found [here](julia_CI.md). 
+
+## How to start developing a new Julia Package
+You may want to read this [HowTo](mytemplate_howto.md) to learn a simple, repeatable way to create GitHub projects for new Julia packages with a ***uniform structure and workflows***. 
+
 
 
   
