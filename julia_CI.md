@@ -32,7 +32,7 @@ Read the following section for details about the last point.
 After you have created your organization, let do the following to setup a ***self-hosted runner***
 1. Sign-in into GitHub with your ***user account***
 2. In the upper, rightmost corner of your browser window, right-click your profile image and select `Your organizations`
-3. In the `Organizations` page, select the one where you want the setup a self-hosted runner
+3. In the `Organizations` page, select the one where you want to setup the self-hosted runner
 4. In the `Organization` page select `Settings` 
 5. In the `Settings` page select `Actions`
 6. In the `Actions` page, select `Allow local actions only` within the section `Action permissions / Policies`

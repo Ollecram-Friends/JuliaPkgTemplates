@@ -52,7 +52,7 @@ function template()
             CompatHelper(;          # Integrates with CompatHelper via GitHub Actions
             # file=                             # Template file for the workflow file
             destination="CompatHelper.yml",     # Destination rel/to .github/workflows
-            cron="0 0 * * *",                   # Cron expression for the schedule interval
+            cron="0 0 * * *",                   # Cron schedule interval: "0 0 * * *" means weekly, on Sunday
             ),
 
             TagBot(;                # Adds GitHub release support via TagBot
