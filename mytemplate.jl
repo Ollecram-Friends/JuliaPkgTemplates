@@ -40,9 +40,9 @@ function template()
                     "deps/deps.jl", "deps/build.log", "deps/downloads/", "deps/usr/", "deps/src/", 
                     "docs/build/", "docs/site/", 
                     "Manifest.toml"], 
-            # name=                         # Take default from github.user 
-            # email=                        # Take default from github.email
-            # branch=                       # Desired name of the repos's default branch
+            # name=                         # Take default from git config variable user.name 
+            # email=                        # Take default from git config variable user.email
+            branch="main",                  # Desired name of the repos's default branch
             ssh=true,                       # Use SSH (vs HTTPS)
             jl=false,                       # Add ".jl" to the git repository URL                   
             manifest=false,                 # Never commit Manifest.toml

@@ -10,10 +10,10 @@ Code in this repository ***is NOT a Julia package***, but rather a ***precursor*
 
 I assume that  
 1. You have a GitHub account configured for **SSH**
-2. You have set the variables `github.user`, `user.name` and `user.email` in your GitHub configuration, as you you verify by `git config --list`  
+2. You have set the variables `github.user`, `user.name` and `user.email` in your GitHub configuration, as you can verify by `git config --list`  
 3. You have setup your shell so that **JAVA_PKG_DEVDIR** variable holds the path to all the local Git clones
 4. You have Julia 1.5.0 or a later version
-5. You have added the `PkgTemplates` Julia package to your Julia environment.
+5. You have added the `PkgTemplates` Julia package to your Julia environment
 
 ## How To PHASE 1 - Create the new package locally
 
