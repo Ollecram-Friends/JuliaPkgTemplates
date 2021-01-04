@@ -10,11 +10,11 @@ Code in this repository ***is NOT a Julia package***, but rather a ***precursor*
 
 I assume that  
 1. You have a GitHub account configured for **SSH**
-2. You have set the variables `github.user` and `github.email` in your GitHub configuration  
+2. You have set the variables `github.user`, `user.name` and `user.email` in your GitHub configuration, as you you verify by `git config --list`  
 3. You have setup your shell so that **JAVA_PKG_DEVDIR** variable holds the path to all the local Git clones
 4. You have Julia 1.5.0 or a later version 
 
-## How To 1 - Create the new package locally
+## How To PHASE 1 - Create the new package locally
 
 1. Open the shell and execute the following commands to ***clone this project***
     - `cd $JAVA_PKG_DEVDIR`
@@ -30,11 +30,15 @@ I assume that
 4. Quit the Julia REPL
     - `CTRL+D`
 
-## How To 2 - Create GitHub project and override with local content
+A ***safer/quicker alternative*** to manually executing the above steps 2 to 4 is to run the following `bash` script just after step 1:
+    - `./mytemplate.sh MyJuliaPkg` 
+
+## How To PHASE 2 - Create GitHub project and override with local content
 
 1. On GitHub ***create a new empty project with the same name***
-    - With your account, use GitHub Web UI to create the project
+    - With your account, use the GitHub Web UI to create the project. No initial content is needed, not even the README and .gitignore)
     - Copy the SSH url of the created package to the clipboard
+    - Review `Settings / Actions / Actions Permissions / Policies` at the organization level. In particular, if Actions are only enabled for `Selected repositories` the newly created one must be selected for automation to work.
 2. Issue Git commands to ***set the remote origin and push***
     - `cd $JAVA_PKG_DEVDIR`
     - `cd MyJuliaPkg`
