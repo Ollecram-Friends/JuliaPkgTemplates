@@ -41,7 +41,7 @@ A ***safer/quicker alternative*** to manually executing the above steps 2 to 4 i
     - If the repo is meant to serve for initial package development
         - ***make it private***
         - ***create it at the organization level***  
-    - Copy the SSH url of the created package to the clipboard
+    - Copy the SSH url of the created repository to the clipboard
     - Review `Settings / Actions / Actions Permissions / Policies` at the organization level. In particular, if Actions are only enabled for `Selected repositories` the newly created one must be selected for automation to work.
 2. Issue Git commands to ***set the remote origin and push***
     - `cd $JAVA_PKG_DEVDIR`
