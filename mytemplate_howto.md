@@ -11,15 +11,19 @@ Code in this repository ***is NOT a Julia package***, but rather a ***precursor*
 I assume that  
 1. You have a GitHub account configured for **SSH**
 2. You have set the variables `github.user`, `user.name` and `user.email` in your GitHub configuration, as you can verify by `git config --list`  
-3. You have setup your shell so that **JAVA_PKG_DEVDIR** variable holds the path to all the local Git clones
-4. You have Julia 1.5.0 or a later version
+3. You have setup your shell so that the **JAVA_PKG_DEVDIR** variable holds the path to all the local Git clones
+4. You have Julia 1.5.0 or a later version (only because I have made no test with older versions)
 5. You have added the `PkgTemplates` Julia package to your Julia environment
 
-## How To PHASE 1 - Create the new package locally
-
+## PHASE 1 - Create the new package locally
 1. Open the shell and execute the following commands to ***clone this project***
     - `cd $JAVA_PKG_DEVDIR`
     - `git clone git@github.com:Ollecram-Friends/JuliaPkgTemplates.git`
+
+Now you may proceed with the ***cautious way***.  Alternatively, you may try the ***confident way***, as defined below.
+
+### The *CAUTIOUS* way
+
 2. In the shell, execute the following commands to ***start the Julia REPL***
     - `cd $JAVA_PKG_DEVDIR`   (...just in case you moved elsewhere...)
     - `julia`
@@ -31,23 +35,39 @@ I assume that
 4. Quit the Julia REPL
     - `CTRL+D`
 
-A ***quicker alternative*** to manually executing the above steps 2 to 4 is to run the following *bash* script just after step 1:
+### The *CONFIDENT* way
+
+A ***quicker alternative to the cautious way*** is to run the following *bash* script just after step 1:
 - `./mytemplate.sh MyJuliaPkg`
 
-## How To PHASE 2 - Create GitHub repository and fill it with local content
+## PHASE 2 - Create GitHub repository and fill it with local content
 
 1. On GitHub ***create a new empty repository with the same name***
-    - With your account, use the GitHub Web UI to create the project
+    - With your account, use the GitHub Web UI to create the Git repository
+    - You can create it at the ***user*** or at the ***organization*** level 
     - No initial content is needed, not even the README and .gitignore
     - If the repo is meant to serve for initial package development
         - ***make it private***
         - ***create it at the organization level***  
-    - Copy the SSH url of the created repository to the clipboard
-    - Review `Settings / Actions / Actions Permissions / Policies` at the organization level. In particular, if Actions are only enabled for `Selected repositories` the newly created one must be selected for automation to work.
+
+Now you may proceed with the ***cautious way***.  Alternatively, you may try the ***confident way***, as defined below.
+
+### The *CAUTIOUS* way
+
 2. Issue Git commands to ***set the remote origin and push***
+    - Copy the SSH url of the created repository to the clipboard
     - `cd $JAVA_PKG_DEVDIR`
     - `cd MyJuliaPkg`
     - `git remote set-url origin <SSH REPOSITORY URL from the CLIPBOARD>`
     - `git branch -M main`
     - `git push -u origin main`
+
+### The *CONFIDENT* way
+
+A ***quicker alternative to the cautious way*** is to run the following *bash* script just after step 1:
+- `./firstpush.sh MyJuliaPkg MyGitHubAccount`
+
+
+## Further configuration (In progress...)
+Review `Settings / Actions / Actions Permissions / Policies` at the organization level. In particular, if Actions are only enabled for `Selected repositories` the newly created one must be selected for automation to work.
 

@@ -3,7 +3,7 @@ function template()
         using PkgTemplates
         
         Template(; 
-        # user=                     # Take default from github.user & github.email
+        user="Ollecram-Friends",                     # Take default from github.user & github.email
         # dir=                      # Take default from $JULIA_PKG_DEVDIR iff defined
         # authors=                  # Build default from `user` argument or default
         julia=v"1.5",               # Require Julia version 1.5.x
