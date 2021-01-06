@@ -85,3 +85,10 @@ This is accomplished in a few steps, namely
     After the last step a list of all secrets defined at the organization level is updated. The list of repositories that can be possibly given access by a secret can then be modified at any time by clicking the `Update` button within the secret's display box. 
 
 
+## PHASE 4 - Develop the package (before registration)
+
+It is certainly sensible to postpone putting a package in the official Julia registry at a point in time when the code has reached a certain maturity level. Meanwhile, the code being developed can be tested together with all other packages in the Julia ecosystem: the way to do that is to leverage the `dev` option with the Julia package management tool `Pkg`.  
+
+That is, instead of `add MyJuliaPkg` (which would only work after the package will be registered) we run `dev MyJuliaPkg`.
+To learn more about this way of proceeding, look the package manager documentation at [Pkg.jl](https://julialang.github.io/Pkg.jl/). 
+
