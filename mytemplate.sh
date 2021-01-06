@@ -38,8 +38,23 @@ exec julia --color=yes --startup-file=no "${BASH_SOURCE[0]}" "$@"
 =#
 
 # ------------------ Put any Julia code below this line ------------------- 
+
+# A. Show the variables passed as arguments to the Julia REPL 
 @show ARGS
 
+# B. Create repository for the new package under JULIA_PKG_DEVDIR  
 include("mytemplate.jl")
 t=template()
 t(ARGS[1])
+
+# C. Create a file named `BEFORE_1st_PUSH` at the root of the new 
+#    repository, as a marker that no 'git push' was executed yet.
+#    This is done to implement robustness in the `firstpush.sh` script
+using Dates
+dateTime = Dates.format(now(), "yyyy-mm-dd HH:MM:SS")
+record = "Created by JuliaPkgTemplates/mytemplate.sh on " * dateTime * "\n"
+path = "../" * ARGS[1] * "/BEFORE_1st_PUSH"
+open(path, "w") do io
+    print(io, record)
+end
+ 

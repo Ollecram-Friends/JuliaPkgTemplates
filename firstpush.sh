@@ -30,26 +30,46 @@ then echo "Error: local clone of JuliaPkgTemplates not found under $JULIA_PKG_DE
 else echo "JuliaPkgTemplates local clone found under '$JULIA_PKG_DEVDIR'";
 fi
 
-# 5. Check that local copy of repository exists as a directory under JULIA_PKG_DEVDIR
+# 5. Check that repository exists locally as a directory under JULIA_PKG_DEVDIR
 if [ ! -d "$JULIA_PKG_DEVDIR/$1" ]; 
-then echo "Error: local clone of $1 not found under $JULIA_PKG_DEVDIR" && exit 1;
-else echo "$1 local clone found under '$JULIA_PKG_DEVDIR'";
+then echo "Error: repository $1 not found under $JULIA_PKG_DEVDIR" && exit 1;
+else echo "Repository $1 found under '$JULIA_PKG_DEVDIR'";
 fi
 
-# 6. Change directory and test that remote origin URL has not been set yet! 
+# 6a. Test that this script is being run against the local git repo for the 1st time 
 cd $JULIA_PKG_DEVDIR/$1
-rou_before=$(cut -d "=" -f2 <<< $(git config --list | grep remote.origin.url))
-if [ $rou_before=="git@github.com:$2/$1.git" ]
-then echo -e "The repository remote origin is already set ($rou_before). \n\tNot the first push? Pls proceed manually." && exit 1;
+if [ ! -f "BEFORE_1st_PUSH" ]; 
+then echo -e "This script was likely ALREADY RUN against the git repo ($1). \n\tPls proceed manually." && exit 1;
 fi
 
-# 7. Set default branch name (`main`) and set origin URL
+# 6b. Test that remote origin URL has not yet been set [gives false positives, temporarily commented out] 
+#rou_before=$(cut -d "=" -f2 <<< $(git config --list | grep remote.origin.url))
+#if [ $rou_before=="git@github.com:$2/$1.git" ]
+#then echo -e "The repository remote origin is already set ($rou_before). \n\tNot the first push? Pls proceed manually." && exit 1;
+#fi
+
+# 7. Fix Documenter 'main vs master' issue by declaring the branch name explicitly in `deploydocs()` 
+sed -i '/deploydocs(;/a \    devbranch="main",' docs/make.jl
+
+# 8. Override .gitignore with the 'canonical' copy from JuliaPkgTemplates
+cp ../JuliaPkgTemplates/.gitignore .
+
+# 9. Delete the file `BEFORE_1st_PUSH` to avoid this script being run twice against the same repo
+rm BEFORE_1st_PUSH
+
+# 10. Add and commit changes made by this script
+git add docs/make.jl
+git add .gitignore
+git add BEFORE_1st_PUSH
+git commit -m "1st push / Fixed 'main vs master' issue in docs/make.jl"
+
+# 11. Set default branch name (`main`) and set origin URL
 git branch -M main
 git remote set-url origin git@github.com:$2/$1.git
 
 rou=$(git config --list | grep remote.origin.url)
 echo "SET $rou"
 
-# 8. Push
+# 12. Push
 git push -u origin main 
  

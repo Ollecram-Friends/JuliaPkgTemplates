@@ -19,16 +19,14 @@ I assume that
 1. Open the shell and execute the following commands to ***clone this project***
     - `cd $JAVA_PKG_DEVDIR`
     - `git clone git@github.com:Ollecram-Friends/JuliaPkgTemplates.git`
-
+    - `cd $JAVA_PKG_DEVDIR/JavaPkgTemplates`
 Now you may proceed with the ***cautious way***.  Alternatively, you may try the ***confident way***, as defined below.
 
 ### The *CAUTIOUS* way
 
 2. In the shell, execute the following commands to ***start the Julia REPL***
-    - `cd $JAVA_PKG_DEVDIR`   (...just in case you moved elsewhere...)
     - `julia`
 3. In the Julia REPL run the following commands, where `MyJuliaPkg` in the last one stands for the name of the new package
-    - `cd("JuliaPkgTemplates")`
     - `include("mytemplate.jl")`
     - `t=template()`
     - `t("MyJuliaPkg")`
@@ -56,18 +54,14 @@ Now you may proceed with the ***cautious way***.  Alternatively, you may try the
 
 2. Issue Git commands to ***set the remote origin and push***
     - Copy the SSH url of the created repository to the clipboard
-    - `cd $JAVA_PKG_DEVDIR`
-    - `cd MyJuliaPkg`
+    - `cd $JAVA_PKG_DEVDIR/MyJuliaPkg`
     - `git remote set-url origin <SSH REPOSITORY URL from the CLIPBOARD>`
     - `git branch -M main`
     - `git push -u origin main`
 
 ### The *CONFIDENT* way
 
-A ***quicker alternative to the cautious way*** is to run the following *bash* script just after step 1:
+A ***quicker alternative to the cautious way*** is to run the following *bash* script just after step 1. The script  is **safer**, because it ***performs several checks to avoid being run against the wrong repository***:
 - `./firstpush.sh MyJuliaPkg MyGitHubAccount`
 
-
-## Further configuration (In progress...)
-Review `Settings / Actions / Actions Permissions / Policies` at the organization level. In particular, if Actions are only enabled for `Selected repositories` the newly created one must be selected for automation to work.
 
