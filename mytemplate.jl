@@ -3,7 +3,7 @@ function template()
         using PkgTemplates
         
         Template(; 
-        user="Ollecram-Friends",                     # Take default from github.user & github.email
+        user="Ollecram-Friends",    # Take default from github.user & github.email
         # dir=                      # Take default from $JULIA_PKG_DEVDIR iff defined
         # authors=                  # Build default from `user` argument or default
         julia=v"1.5",               # Require Julia version 1.5.x
@@ -44,7 +44,7 @@ function template()
             # email=                        # Take default from git config variable user.email
             branch="main",                  # Desired name of the repos's default branch
             ssh=true,                       # Use SSH (vs HTTPS)
-            jl=false,                       # Add ".jl" to the git repository URL                   
+            jl=true,                        # Add ".jl" to the git repository URL                   
             manifest=false,                 # Never commit Manifest.toml
             gpgsign=false,                  # No GPG signing of Git commits
             ),

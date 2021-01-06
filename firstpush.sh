@@ -65,7 +65,7 @@ git commit -m "1st push / Fixed 'main vs master' issue in docs/make.jl"
 
 # 11. Set default branch name (`main`) and set origin URL
 git branch -M main
-git remote set-url origin git@github.com:$2/$1.git
+git remote set-url origin git@github.com:$2/$1.jl.git
 
 rou=$(git config --list | grep remote.origin.url)
 echo "SET $rou"
