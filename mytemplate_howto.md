@@ -64,4 +64,24 @@ Now you may proceed with the ***cautious way***.  Alternatively, you may try the
 A ***quicker alternative to the cautious way*** is to run the following *bash* script just after step 1. The script  is **safer**, because it ***performs several checks to avoid being run against the wrong repository***:
 - `./firstpush.sh MyJuliaPkg MyGitHubAccount`
 
+## PHASE 3 - Create and upload SSH Keys
+
+The proper working of **Documenter** workflows require to upload an SSH key to GitHub. 
+This is accomplished in a few steps, namely
+
+1. Run the script `ssh_keygen.sh` with a single argument (a name) to generate the public and private keys 
+    - ./ssh_keygen.sh DOCUMENTER
+2. Upload the ***public key***, i.e. the content of the generated file `DOCUMENTER_SSH_KEY.pub` as a DEPLOY KEY
+    - Access each repository whose workflows must be able to authorize with GitHub through the SSH key  
+    - Open the repository web page at `Settings/Deploy Keys` and insert the public key string in the `Key` field 
+    - Make sure that the `Allow write access` box is checked.
+3. Store the ***private key***, i.e. the content of the generated file `DOCUMENTER_SSH_KEY.base64` as a ***SECRET*** 
+    - At the ***organization level*** open `Settings/Secrets` and click `New organization secret`
+    - Type `DOCUMENTER_KEY` in the secret's **Name** field
+    - Paste the key string in the secret's **Value** field
+    - Type `Selected repositories` on `Repository access`
+    - Select one or more repositories (among the ones currently defined at the organization level)
+
+    After the last step a list of all secrets defined at the organization level is updated. The list of repositories that can be possibly given access by a secret can then be modified at any time by clicking the `Update` button within the secret's display box. 
+
 
