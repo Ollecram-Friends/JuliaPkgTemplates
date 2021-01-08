@@ -39,7 +39,7 @@ Now you may proceed with the ***cautious way*** or, alternatively, you may try t
 - `./mytemplate.sh MyJuliaPkg`
 
 ### PHASE 1 Important Note
-The argument to `mytemplate.sh` (and to the `PkgTemplates` generating function) is *name of the Julia* ***package***, not necessarily being the same as the *name of the GitHub* ***repository***. Therefore ***YOU MUST PROVIDE the package name WITHOUT the .jl SUFFIX!***.
+The argument to `mytemplate.sh` (and to the `PkgTemplates` generating function) is the **name** of the Julia ***package***, not necessarily being the same as the **name** of the GitHub ***repository***. Therefore ***YOU MUST PROVIDE the package name WITHOUT the .jl SUFFIX!***.
 
 ## PHASE 2 - Create GitHub repository and fill it with local content
 As per the preceding note, create a new empty GitHub repository ***with the .jl suffix*** in the name. This will make you compliant with the current Julia guidelines for a repository to hold a Julia ***package***. 
@@ -80,8 +80,8 @@ This is accomplished in a few steps, namely
 1. Run the script `ssh_keygen.sh` with a single argument (a name) to generate the public and private keys 
     - ./ssh_keygen.sh DOCUMENTER
     
-    *** It is critical that all the 4 generated files be SAVED IN A SAFE PLACE*** because the same key will be used
-    for building documentation across all projects. In the proposed GitHub setup this requires to store the ***public key*** (as a *DEPLOY key* with each new Julia project, while the ***private key*** will be stored once, at the organization level. When all repositories with this DEPLOY key are deleted, ***the public key would be lost***, unless saved elsewhere. The risk of loosing the private key is lower, but still possible, whence it is critical that both be saved (note that GitHub requires the base64 representation of the private key). 
+    ***It is critical that all the 4 generated files be SAVED IN A SAFE PLACE*** because the same key will be used
+    for building documentation across all projects. In the proposed GitHub setup this requires to store the ***public key*** (as a *DEPLOY key*) with each new Julia project, while the ***private key*** will be stored once, at the organization level. When all repositories with this DEPLOY key are deleted, ***the public key would be lost***, unless saved elsewhere. The risk of loosing the private key is lower, but still possible, whence it is critical that both be saved (note that GitHub requires the base64 representation of the private key). 
 
     Note also that the `ssh_keygen.sh` saves the generated keys under the `temp` subfolder of the [JuliaPkgTemplates](https://github.com/Ollecram-Friends/JuliaPkgTemplates) project. As per the `.gitignore` the content of that subfolder ***is NOT pushed to the remote origin*** for obvious reasons  (that being a *public* repo). Therefore, ***content generated in that folder MUST BE COPIED and KEPT ELSEWHERE***.
 
