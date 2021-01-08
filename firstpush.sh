@@ -54,22 +54,27 @@ sed -i '/deploydocs(;/a \    devbranch="main",' docs/make.jl
 # 8. Override .gitignore with the 'canonical' copy from JuliaPkgTemplates
 cp ../JuliaPkgTemplates/.gitignore .
 
-# 9. Delete the file `BEFORE_1st_PUSH` to avoid this script being run twice against the same repo
+# 9. Add Blue style badger to the generated README.md
+echo '[![Code Style: Blue](https://img.shields.io/badge/code%20style-blue-4495d1.svg)](https://github.com/invenia/BlueStyle)' >> README.md
+
+# 10. Delete the file `BEFORE_1st_PUSH` to avoid this script being run twice against the same repo
 rm BEFORE_1st_PUSH
 
-# 10. Add and commit changes made by this script
+# 11. Add and commit changes made by this script
 git add docs/make.jl
 git add .gitignore
+git add README.md
 git add BEFORE_1st_PUSH
 git commit -m "1st push / Fixed 'main vs master' issue in docs/make.jl"
 
-# 11. Set default branch name (`main`) and set origin URL
+# 12. Set default branch name (`main`) and set origin URL
 git branch -M main
 git remote set-url origin git@github.com:$2/$1.jl.git
 
 rou=$(git config --list | grep remote.origin.url)
 echo "SET $rou"
 
-# 12. Push
+# 13. Push
 git push -u origin main 
+ 
  

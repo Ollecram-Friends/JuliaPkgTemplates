@@ -20,7 +20,7 @@ I assume that
     - `cd $JAVA_PKG_DEVDIR`
     - `git clone git@github.com:Ollecram-Friends/JuliaPkgTemplates.git`
     - `cd $JAVA_PKG_DEVDIR/JavaPkgTemplates`
-Now you may proceed with the ***cautious way***.  Alternatively, you may try the ***confident way***, as defined below.
+Now you may proceed with the ***cautious way*** or, alternatively, you may try the ***confident way***, as defined below.
 
 ### The *CAUTIOUS* way
 
@@ -35,11 +35,14 @@ Now you may proceed with the ***cautious way***.  Alternatively, you may try the
 
 ### The *CONFIDENT* way
 
-A ***quicker alternative to the cautious way*** is to run the following *bash* script just after step 1:
+***A quicker alternative to the cautious way*** is to run the following *bash* script just after step 1:
 - `./mytemplate.sh MyJuliaPkg`
 
-## PHASE 2 - Create GitHub repository and fill it with local content
+### PHASE 1 Important Note
+The argument to `mytemplate.sh` (and to the `PkgTemplates` generating function) is *name of the Julia* ***package***, not necessarily being the same as the *name of the GitHub* ***repository***. Therefore ***YOU MUST PROVIDE the package name WITHOUT the .jl SUFFIX!***.
 
+## PHASE 2 - Create GitHub repository and fill it with local content
+As per the preceding note, create a new empty GitHub repository ***with the .jl suffix*** in the name. This will make you compliant with the current Julia guidelines for a repository to hold a Julia ***package***. 
 1. On GitHub ***create a new empty repository with the same name***
     - With your account, use the GitHub Web UI to create the Git repository
     - You can create it at the ***user*** or at the ***organization*** level 
@@ -48,7 +51,9 @@ A ***quicker alternative to the cautious way*** is to run the following *bash* s
         - ***make it private***
         - ***create it at the organization level***  
 
-Now you may proceed with the ***cautious way***.  Alternatively, you may try the ***confident way***, as defined below.
+Note that you still use the ***package name*** (without the `.jl`) as an argument to the following scripts, however *** the name of the newly created *GitHub repository* is assumed to include the `.jl` suffix***.  
+
+Now you may proceed with the ***cautious way*** or, alternatively, you may try the ***confident way***, as defined below.
 
 ### The *CAUTIOUS* way
 
@@ -61,16 +66,25 @@ Now you may proceed with the ***cautious way***.  Alternatively, you may try the
 
 ### The *CONFIDENT* way
 
-A ***quicker alternative to the cautious way*** is to run the following *bash* script just after step 1. The script  is **safer**, because it ***performs several checks to avoid being run against the wrong repository***:
+***A quicker alternative to the cautious way*** is to run the following *bash* script just after step 1. The script  is **safer**, because it ***performs several checks to avoid being run against the wrong repository***:
 - `./firstpush.sh MyJuliaPkg MyGitHubAccount`
+
+### PHASE 2 Important Note
+At the end of this step you should have a ***mismatch*** between the ***name of the GitHub repository*** (the *remote origin*) and the ***name of the folder*** holding the locally generated content: the former with the `.jl` suffix and the former without. In order to avoid confusion, ***it is recommended at this stage to delete the local (initial) content (`rm -rf MyJuliaPack`) and to get a new clone from GitHub***. 
 
 ## PHASE 3 - Create and upload SSH Keys
 
-The proper working of **Documenter** workflows require to upload an SSH key to GitHub. 
+The proper working of **Documenter** workflows requires to upload SSH keys to GitHub. 
 This is accomplished in a few steps, namely
 
 1. Run the script `ssh_keygen.sh` with a single argument (a name) to generate the public and private keys 
     - ./ssh_keygen.sh DOCUMENTER
+    
+    *** It is critical that all the 4 generated files be SAVED IN A SAFE PLACE*** because the same key will be used
+    for building documentation across all projects. In the proposed GitHub setup this requires to store the ***public key*** (as a *DEPLOY key* with each new Julia project, while the ***private key*** will be stored once, at the organization level. When all repositories with this DEPLOY key are deleted, ***the public key would be lost***, unless saved elsewhere. The risk of loosing the private key is lower, but still possible, whence it is critical that both be saved (note that GitHub requires the base64 representation of the private key). 
+
+    Note also that the `ssh_keygen.sh` saves the generated keys under the `temp` subfolder of the [JuliaPkgTemplates](https://github.com/Ollecram-Friends/JuliaPkgTemplates) project. As per the `.gitignore` the content of that subfolder ***is NOT pushed to the remote origin*** for obvious reasons  (that being a *public* repo). Therefore, ***content generated in that folder MUST BE COPIED and KEPT ELSEWHERE***.
+
 2. Upload the ***public key***, i.e. the content of the generated file `DOCUMENTER_SSH_KEY.pub` as a DEPLOY KEY
     - Access each repository whose workflows must be able to authorize with GitHub through the SSH key  
     - Open the repository web page at `Settings/Deploy Keys` and insert the public key string in the `Key` field 
@@ -82,7 +96,7 @@ This is accomplished in a few steps, namely
     - Type `Selected repositories` on `Repository access`
     - Select one or more repositories (among the ones currently defined at the organization level)
 
-    After the last step a list of all secrets defined at the organization level is updated. The list of repositories that can be possibly given access by a secret can then be modified at any time by clicking the `Update` button within the secret's display box. 
+    After the last step a list of all secrets defined at the organization level is updated. The list of repositories that can possibly be given access by a secret can then be modified at any time by clicking the `Update` button within the secret's display box. 
 
 
 ## PHASE 4 - Develop the package (before registration)
