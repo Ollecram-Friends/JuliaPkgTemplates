@@ -31,12 +31,12 @@ This is accomplished in a few steps, namely
 ### Deploy the Documenter private KEY as an organization Secret
 
 Store the ***private key***, i.e. the content of the generated file `DOCUMENTER_SSH_KEY.base64` as a ***SECRET*** 
-    - At the ***organization level*** open `Settings/Secrets` and click `New organization secret`
-    - Type `DOCUMENTER_KEY` in the secret's **Name** field
-    - Paste the key string in the secret's **Value** field
-    - Type `Selected repositories` on `Repository access`
+- At the ***organization level*** open `Settings/Secrets` and click `New organization secret`
+- Type `DOCUMENTER_KEY` in the secret's **Name** field
+- Paste the key string in the secret's **Value** field
+- Type `Selected repositories` on `Repository access`
     
-    The list of repositories that can possibly be given access to this secret can be modified at any time by clicking the `Update` button within the secret's display box. This is something we will do each time we create the repository for a new Julia package at the organization level. 
+The list of repositories that can possibly be given access to this secret can be modified at any time by clicking the `Update` button within the secret's display box. This is something we will do each time we create the repository for a new Julia package at the organization level. 
 
 ## PHASE 1 - Create the new package locally
 1. Open the shell and execute the following commands to ***clone this project***
@@ -65,7 +65,7 @@ Now you may proceed with the ***cautious way*** or, alternatively, you may try t
 The argument to `mytemplate.sh` (and to the `PkgTemplates` generating function) is the **name** of the Julia ***package***, not necessarily being the same as the **name** of the GitHub ***repository***. Therefore ***YOU MUST PROVIDE the package name WITHOUT the .jl SUFFIX!***.
 
 ## PHASE 2 - Setup an empty GitHub repository for the new package
-As per the preceding note, create a new empty GitHub repository ***with the .jl suffix*** in the name. This will make you compliant with the current Julia guidelines for a repository to hold a Julia ***package***. 
+ACreate a new empty GitHub repository ***with the .jl suffix*** in the name. This will make you compliant with the current Julia guidelines for a repository to hold a Julia ***package***. 
 
 ### 2A - Create the GitHub repository
 1. On GitHub ***create a new empty repository*** with the name `MyJuliaPkg.jl`
@@ -108,14 +108,14 @@ where `MyGitHubAccount` stands for
 Alternatively, you may proceed with the ***cautious way***, as defined below, which makes sense if you are not interested in the above mentioned code fixes and improvements, likely because you need to investigate possible Git issues.
 
 For this, just issue Git commands to ***set the remote origin and push***
-    - Copy the SSH url of the created repository to the clipboard
-    - `cd $JAVA_PKG_DEVDIR/MyJuliaPkg`
-    - `git remote set-url origin <SSH REPOSITORY URL from the CLIPBOARD>`
-    - `git branch -M main`
-    - `git push -u origin main`
+- Copy the SSH url of the created repository to the clipboard
+- `cd $JAVA_PKG_DEVDIR/MyJuliaPkg`
+- `git remote set-url origin <SSH REPOSITORY URL from the CLIPBOARD>`
+- `git branch -M main`
+- `git push -u origin main`
 
 ### PHASE 3 Important Note
-At the end of this step you should have a ***mismatch*** between the ***name of the GitHub repository*** (the *remote origin*) and the ***name of the folder*** holding the locally generated content: the former with the `.jl` suffix and the former without. In order to avoid confusion, ***it is recommended at this stage to delete the local (initial) content (`rm -rf MyJuliaPack`) and to get a new clone from GitHub***. 
+At the end of this step you should have a ***mismatch*** between the ***name of the GitHub repository*** (the *remote origin*) and the ***name of the folder*** holding the locally generated content: the former with the `.jl` suffix and the latter without. In order to avoid confusion, ***it is recommended at this stage to delete the local (initial) content (`rm -rf MyJuliaPack`) and to get a new clone from GitHub***. 
 
 ## PHASE 4 - Develop the package (before registration)
 
