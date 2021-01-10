@@ -38,6 +38,8 @@ Store the ***private key***, i.e. the content of the generated file `DOCUMENTER_
     
 The list of repositories that can possibly be given access to this secret can be modified at any time by clicking the `Update` button within the secret's display box. This is something we will do each time we create the repository for a new Julia package at the organization level. 
 
+*CAVEAT. The above approach must be reviewed on account of the fact that the same Deploy Key cannot be defined for multiple repositories*. See GitHub [Machine users](https://docs.github.com/en/free-pro-team@latest/developers/overview/managing-deploy-keys#machine-users).
+
 ## PHASE 1 - Create the new package locally
 1. Open the shell and execute the following commands to ***clone this project***
     - `cd $JAVA_PKG_DEVDIR`
@@ -65,7 +67,7 @@ Now you may proceed with the ***cautious way*** or, alternatively, you may try t
 The argument to `mytemplate.sh` (and to the `PkgTemplates` generating function) is the **name** of the Julia ***package***, not necessarily being the same as the **name** of the GitHub ***repository***. Therefore ***YOU MUST PROVIDE the package name WITHOUT the .jl SUFFIX!***.
 
 ## PHASE 2 - Setup an empty GitHub repository for the new package
-ACreate a new empty GitHub repository ***with the .jl suffix*** in the name. This will make you compliant with the current Julia guidelines for a repository to hold a Julia ***package***. 
+Create a new empty GitHub repository ***with the .jl suffix*** in the name. This will make you compliant with the current Julia guidelines for a repository to hold a Julia ***package***. 
 
 ### 2A - Create the GitHub repository
 1. On GitHub ***create a new empty repository*** with the name `MyJuliaPkg.jl`
@@ -88,6 +90,8 @@ ACreate a new empty GitHub repository ***with the .jl suffix*** in the name. Thi
     - Click `Update` on the `DOCUMENTER_KEY` secret
     - Update the selection of organization repositories that may use this secret
     - Click `Update selection`  
+
+*CAVEAT. The above approach is being deprecated, because it is not possible to define the same Deploy Key in multiple repositories*. GitHub [Machine users](https://docs.github.com/en/free-pro-team@latest/developers/overview/managing-deploy-keys#machine-users) is being investigated as a possible alternative. In this approach the KEY would not be associated to a ***repository*** but to a *virtual* ***user*** in charge of only running automations across all repositories. 
 
 ## PHASE 3 - Apply fixes and improvements, then push the local repository
 
